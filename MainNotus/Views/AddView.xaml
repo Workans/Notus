@@ -1,0 +1,69 @@
+﻿<Window x:Class="MainNotus.Views.AddView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="AddView" Height="450" Width="800" DataContext="{StaticResource vmlocator}">
+    <Grid
+        Background="LightGray">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid
+            Margin="10">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <StackPanel>
+                <Label>Note name</Label>
+                <TextBox
+                    BorderThickness="0"
+                    Text="{Binding NoteName}">
+                    <TextBox.Background>
+                        <SolidColorBrush Color="Gray" Opacity="0.1" />
+                    </TextBox.Background>
+                </TextBox>
+            </StackPanel>
+            <StackPanel Grid.Row="1">
+                <Label>Languege</Label>
+                <TextBox
+                    BorderThickness="0"
+                    Text="{Binding Language}">
+                    <TextBox.Background>
+                        <SolidColorBrush Color="Gray" Opacity="0.1" />
+                    </TextBox.Background>
+                </TextBox>
+                <Label>Short description</Label>
+                <TextBox Height="50" BorderThickness="0"
+                         Text="{Binding ShortDescription}">
+                    <TextBox.Background>
+                        <SolidColorBrush Color="Gray" Opacity="0.1" />
+                    </TextBox.Background>
+                </TextBox>
+                <Button
+                    Margin="20"
+                    Width="50"
+                    Command="{Binding AddCommand}"
+                    CommandParameter="{Binding RelativeSource=
+                        {RelativeSource AncestorType=Window, Mode=FindAncestor}}">Save</Button>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Column="1"
+              Margin="10">
+            <StackPanel>
+                <Label>Note</Label>
+                <TextBox Height="350" BorderThickness="0"
+                         Text="{Binding FullDescription}"
+                         AcceptsReturn="True"
+                         TextWrapping="Wrap">
+                    <TextBox.Background>
+                        <SolidColorBrush Color="Gray" Opacity="0.1" />
+                    </TextBox.Background>
+                </TextBox>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

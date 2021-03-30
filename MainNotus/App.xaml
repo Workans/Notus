@@ -1,0 +1,10 @@
+﻿<Application x:Class="MainNotus.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:MainNotus.ViewModels"
+             xmlns:locator="clr-namespace:MainNotus.Infrastructure"
+             StartupUri="Views/MainView.xaml">
+    <Application.Resources>
+        <locator:ViewModelsLocator x:Key="vmlocator"></locator:ViewModelsLocator>
+    </Application.Resources>
+</Application>
